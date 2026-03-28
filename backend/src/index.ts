@@ -14,8 +14,14 @@ const PORT = process.env.PORT || 4000;
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 
+const allowedOrigins = [
+  process.env.CLIENT_URL, // Set this in Vercel to your frontend URL
+  'http://localhost:5173',
+  'https://real-estate-portal-sigma-six.vercel.app' // Add your frontend Vercel URL here if you know it
+].filter(Boolean) as string[];
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: allowedOrigins.length > 0 ? allowedOrigins : '*',
   credentials: true,
 }));
 

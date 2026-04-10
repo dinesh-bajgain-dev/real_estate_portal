@@ -1,4 +1,4 @@
-# EstatePortal — Buyer Portal Assessment
+# EstatePortal
 
 A full-stack buyer portal for a real-estate broker. Built with **React + TypeScript**, **Node.js + Express**, and **PostgreSQL**.
 
